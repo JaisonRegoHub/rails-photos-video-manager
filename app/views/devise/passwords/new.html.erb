@@ -1,0 +1,24 @@
+<h2>Forgot your password?</h2>
+<div class="sidenav">
+    <div class="login-main-text">
+      <h2>Application</h2>
+      <p>Give email for resetting the password.</p>
+    </div>
+</div>
+<div class="main">
+    <div class="col-md-6 col-sm-12">
+      <div class="login-form">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <form>
+            <div class="form-group">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+             <%= f.submit "Send me reset password instructions", class: "btn btn-black" %>
+          </form>
+        <% end %>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+</div>
